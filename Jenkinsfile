@@ -22,7 +22,7 @@ pipeline {
          }         
          stage('Upload to AWS') {
               steps {
-                  withAWS(region:'us-east-2',credentials:'10bd25c2-9581-4011-a5dd-0f29026906c8') {
+                  withAWS(region:'us-east-1',credentials:'10bd25c2-9581-4011-a5dd-0f29026906c8') {
                   sh 'echo "Uploading content with AWS creds"'
                       s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'patolatechbucket')
                   }
